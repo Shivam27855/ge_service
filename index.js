@@ -96,7 +96,7 @@ app.post("/addGeItem",(req,res)=>{
 
 app.post("/editGeItem/:itemId",(req,res)=>{
     let currGeId=req.params['itemId'];
-    con.query(`UPDATE ge_list SET item_name='${req.body.item_name}',item_company='${req.body.item_company}',item_modal='${req.body.item_modal}',item_subcategory='${req.body.item_subcategory}',item_warranty='${req.body.item_warranty}',item_cp=${req.body.item_cp},item_sp=${req.body.item_sp},item_description='${req.body.item_description}' WHERE item_id=${currGeId}`, (err, rows, fields) => {
+    con.query(`UPDATE ge_list SET item_shortname='${req.body.item_shortname}',item_name='${req.body.item_name}',item_company='${req.body.item_company}',item_modal='${req.body.item_modal}',item_subcategory='${req.body.item_subcategory}',item_warranty='${req.body.item_warranty}',item_cp=${req.body.item_cp},item_sp=${req.body.item_sp},item_description='${req.body.item_description}' WHERE item_id=${currGeId}`, (err, rows, fields) => {
         if (err)
         {
             res.send("Ge Item can not be edited");
